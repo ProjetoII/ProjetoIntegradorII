@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Projeto Integrador II - Ciência de Dados</title>
-<link rel="icon" type="image/png" href="IbidenIcon.png"/>
+<link rel="icon" type="image/jpg" href="{{ url_for('static', filename='time.jpg') }}"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -82,7 +82,7 @@
 </p>
 <p> Acesse a página de solicitação:</p>
 </p>
-<a href="projeto.html" class="w3-bar-item w3-button"><i class="fa fa-angle-right"  w3-margin-right></i> Formulário para Análise</a>
+<a href="{{ url_for('formulario') }}" class="w3-bar-item w3-button"><i class="fa fa-angle-right"  w3-margin-right></i> Formulário para Análise</a>
 </div>
 
 <div class="w3-quarter">

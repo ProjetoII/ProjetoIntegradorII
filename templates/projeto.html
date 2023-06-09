@@ -10,7 +10,7 @@
 
 
 <title>Análise de Crédito</title>
-<link rel="icon" type="image/png" href="IbidenIcon.png"/>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='IbidenIcon.png') }}"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -41,7 +41,7 @@ body, html {height: 100%}
 <div class="w3-top">
   <div class="w3-bar w3-theme-d2 w3-center-align">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-center w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-    <a href="time.html" class="w3-bar-item w3-button w3-center"><i class="fa fa-user-circle-o "></i>  Time&Projeto</a>
+    <a href="{{ url_for('projetoeTime') }}" class="w3-bar-item w3-button w3-center"><i class="fa fa-user-circle-o "></i>  Time&Projeto</a>
   </div>
   </div>
 
@@ -58,7 +58,7 @@ body, html {height: 100%}
     <hr class="w3-border-grey" style="margin:auto;width:40%">
   </div>
 </div>
-<form method="POST" action="/solicitacao">
+<form method="POST" action="/resultado">
     <div class="container_form ">
             <div class="w3-center">
             <h3>Informe os dados abaixo para solicitar a análise</h3>
@@ -125,9 +125,9 @@ body, html {height: 100%}
             <label class="text">Moradia</label>
             <select name="moradia" class="dropdown" required>
                 <option selected disabled class="form_select_option" value="">Selecione</option>
-                <option id="id1" class="form_select_option" value="Aluguel">Aluguel</option>
-                <option id="id2" class="form_select_option" value="Próprio">Próprio</option>
-                <option id="id3" class="form_select_option" value="Gratuito">Gratuito</option>
+                <option  class="form_select_option" value="1">1 - Aluguel</option>
+                <option  class="form_select_option" value="2">2 - Próprio</option>
+                <option  class="form_select_option" value="3">3 - Gratuito</option>
             </select>
             <div class="form_grupo">
                 <div class="form-check">
@@ -155,22 +155,16 @@ body, html {height: 100%}
         </div>
     </div>
   </form>
-
-
-	</div>
-<!-- {% if classe %} -->
-			{% if classe == "Aprovado" %}
-				<div style="display:table-cell; vertical-align:middle; text-align:center">
-					<img src="static/aprovado.jpg" width="300px" height="175px" align="center">
-				</div>
-			{% else %}
-				<div style="display:table-cell; vertical-align:middle; text-align:center">
-					<img src="static/reprovado.jpg" width="300px" height="175px" align="center">
-				</div>
-			{% endif %}
-		<!-- {% endif %} -->
-	<!-- FIM DO CONTAINER-->
-	</div>
+<script>
+    $(document).ready(function(){
+        $('#valor').mask('000.000.000.000.000,00', {reverse: true});
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+        $('#money').mask('000.000.000.000.000,00', {reverse: true});
+    });
+  </script>
 
 </body>
 </html>
